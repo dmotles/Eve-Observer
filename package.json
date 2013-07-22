@@ -1,8 +1,20 @@
 {
-  "name": "thor",
+  "name": "eve-wh-calc",
   "version": "0.0.1",
+  "author": "Daniel Motles <seltom.dan@gmail.com>",
+  "description": "Tries to determine aggregate mass passing through EVE Online worm holes",
   "dependencies": {
-    "express": "3.x"
+    "express": "3.x",
+    "q": "0.9.x",
+    "mongoose": "3.6.x",
+    "hamster": "https://github.com/dmotles/hamster/tarball/master"
+  },
+  "devDependencies": {
+    "mocha": "1.12.x",
+    "expect.js": "0.2.x"
+  },
+  "scripts": {
+    "start": "node ./web.js"
   },
   "engines": {
     "node": "0.10.x",
