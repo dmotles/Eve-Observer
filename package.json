@@ -11,7 +11,8 @@
   },
   "devDependencies": {
     "mocha": "1.12.x",
-    "expect.js": "0.2.x"
+    "expect.js": "0.2.x",
+    "nock": "0.22.x"
   },
   "scripts": {
     "start": "node ./web.js"
