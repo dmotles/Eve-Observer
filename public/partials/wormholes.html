@@ -1,0 +1,45 @@
+<table class="table table-striped">
+  <caption>WORMHOLE DATA</caption>
+  <thead>
+    <tr>
+      <th colspan="2">Wormhole</th>
+      <th colspan="2">Systems</th>
+      <th colspan="4">Mass</th>
+      <th colspan="3">LifeTime</th>
+      <th colspan="1" rowspan="2">Last Seen</th>
+    </tr>
+    <tr>
+      <th>Signature</th>
+      <th>Class</th>
+
+      <th>Source</th>
+      <th>Exit</th>
+
+      <th>Max</th>
+      <th>Current</th>
+      <th>Remaining</th>
+      <th>Ship Ratio</th>
+
+      <th>Max</th>
+      <th>Current</th>
+      <th>Remaining</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="wormhole in wormholes">
+      <td>{{wormhole.signature}}</td>
+      <td>{{wormhole.class}}</td>
+      <td>{{wormhole.source.name}}</td>
+      <td>{{wormhole.exit.name}}</td>
+      <td>{{wormhole.mass}}</td>
+      <td>{{wormhole.currentMass}}</td>
+      <td>{{wormhole.mass - wormhole.currentMass}}</td>
+      <td>{{(wormhole.mass - wormhole.currentMass) / player.ship.mass}}</td>
+      <td>{{wormhole.lifetime}}</td>
+      <td>{{wormhole.firstSeen - now}}</td>
+      <td>{{(wormhole.firstSeen - now) - wormhole.lifetime}}</td>
+      <td>{{wormhole.lastUpdate}}</td>
+    </tr>
+  </tbody>
+</table>

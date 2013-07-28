@@ -1,0 +1,18 @@
+<div class="row" ng-cloak>
+  <div class="span3"></div>
+  <div class="span6">
+   <form class="well form-signin" ng-submit="authenticate()">
+    <h2 class="form-signin-heading">Authentication Required</h2>
+    <div class="alert alert-error" ng-show="authError">
+      <strong>Error</strong> Authentication Failed.
+    </div>
+    <input type="text" class="input-block-level" value="{{eve.player.name()}}" disabled="true">
+    <input type="password" class="input-block-level" placeholder="Password" required="true" ng-model="password">
+    <label class="checkbox">
+      <input type="checkbox" ng-model="rememberMe"> Remember me
+    </label>
+    <button class="btn btn-large btn-primary" type="submit" ng-disabled="isProcessing">Submit</button>
+    </form> 
+  </div>
+  <div class="span3"></div>
+</div>

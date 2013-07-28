@@ -1,0 +1,35 @@
+<div class="alert alert-error" ng-hide="permitted()">{{deniedReason}}</div>
+<div class="hero-unit">
+  <h1>EAZY-E</h1>
+  <blockquote>
+    <p>
+      The phonetic prounounciation of the acronym for <strong>Eve Corporation Extension</strong> (E.C.E.) and 
+      the father of gangster rap music from <a href="http://en.wikipedia.org/wiki/N.W.A" target="_blank">N.W.A.</a>
+    </p>
+    <small>E.C.E. Devs and <cite><a href="http://en.wikipedia.org/wiki/Eazy-E" target="_blank">Wikipedia</a></cite></small>
+  </blockquote>
+  <p>
+    <a ng-click="requestTrust()" ng-disabled="!permitted()" class="btn btn-primary btn-large">Trust This Website</a>
+  </p>
+</div>
+
+<div class="row">
+  <div class="span4">
+    <h2>Wormhole Tools</h2>
+    <p>
+      Using data collected anonymously from players who leave this website running in their in-game browser, you can get
+      an estimate on how much mass is needed to collapse a Wormhole.
+    </p>
+    <p><a class="btn" href="#">View details &raquo;</a></p>
+  </div>
+  <div class="span4">
+    <h2>Corp Directors</h2>
+    <p>We can provide a total picture of your corp's firepower such that you can better manage assets and defences for your fleet.</p>
+    <p><a class="btn" href="#">View details &raquo;</a></p>
+ </div>
+  <div class="span4">
+    <h2>Open Source</h2>
+    <p>See the source code that is used to run this website so you can be sure there is no funny business. We take the security of your information very seriously.</p>
+    <p><a class="btn" href="#">View details &raquo;</a></p>
+  </div>
+</div>
