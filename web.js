@@ -9,7 +9,7 @@ app.set('view engine', 'html');
 
 app.get('/', function(req, res) {
   var igbparams = igb.extractParameters(req);
-  console.log(igbparams);
+  console.log(req.headers);
   res.render('index', {
     igb: igbparams
   });
