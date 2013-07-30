@@ -13,6 +13,12 @@
   <div class="navbar navbar-fixed-top" ng-controller="NavBar">
     <div class="navbar-inner">
       <div class="container">
+        <% if(igb.trusted === 'Yes') {%>
+        <div class="pull-right nav-text">
+          <span><%= igb.charName %></span>
+          <img src="http://image.eveonline.com/<%= igb.charId %>_64.jpg" height="50" width="50" class="img-polaroid">
+        </div>
+        <% } %>
         <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
