@@ -28,7 +28,7 @@ module.exports = {
 
   httpNameMap: function() {
     return TRUSTED_PARAMS.reduce(function(target, param) {
-      target[param] = 'EVE_' + param.toUpperCase();
+      target[param] = 'eve_' + param.toLowerCase();
       return target;
     }, {});
   },
