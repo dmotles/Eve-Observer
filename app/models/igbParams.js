@@ -26,16 +26,19 @@ module.exports = {
     return TRUSTED_PARAMS.slice();
   },
 
-  httpNames: function() {
-    return TRUSTED_PARAMS.map(function(param) {
-      return 'EVE_' + param.toUpperCase();
-    });
+  httpNameMap: function() {
+    return TRUSTED_PARAMS.reduce(function(target, param) {
+      target[param] = 'EVE_' + param.toUpperCase();
+      return target;
+    }, {});
   },
 
   extractParameters: function(request) {
-    return this.httpNames().reduce(function(target, param) {
-      if(typeof(request.headers[param]) !== 'undefined') {
-        target[param] = request.headers[param];
+    var httpNameMap = this.httpNameMap();
+    return Object.keys(httpNameMap).reduce(function(target, param) {
+      var httpName = httpNameMap[param];
+      if(typeof(request.headers[httpName]) !== 'undefined') {
+        target[param] = request.headers[httpName];
       }
       return target;
     }, {});
