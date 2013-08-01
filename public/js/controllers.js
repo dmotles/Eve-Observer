@@ -24,7 +24,7 @@ angular.module('ECE.controllers', []
     if($scope.notInGame) {
       $scope.alerts.push({
         class: 'error',
-        exlaim: 'Ayo!',
+        exclaim: 'SLOW YO ROLE SON!',
         text: 'You need to be in-game to use this site.'
       });
     } else if(!igb.trusted) {
@@ -56,8 +56,8 @@ angular.module('ECE.controllers', []
       $scope.alerts.splice(i, 1);
     }
   }
-]).controller('NavBar', function() {
-
-}).controller('Footer', function() {
-  
+]).controller('NavBar', function($scope, igb) {
+  $scope.igb = angular.extend({}, igb);
+  $scope.showPortrait = igb.trusted && igb.charName && igb.charId;
+}).controller('Footer', function(igb) {
 });
