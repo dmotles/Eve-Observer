@@ -1,35 +1,82 @@
-<div class="alert alert-error" ng-hide="permitted()">{{deniedReason}}</div>
+<div ng-repeat="alert in alerts" class="alert alert-{{alert.class}}">
+  <a href="#" class="close" ng-click="removeAlert($index)" data-dismiss="alert">&times;</a>
+  <strong>{{alert.exclaim}}</strong>
+  {{alert.text}}
+</div>
 <div class="hero-unit">
   <h1>EAZY-E</h1>
   <blockquote>
     <p>
-      The phonetic prounounciation of the acronym for <strong>Eve Corporation Extension</strong> (E.C.E.) and 
-      the father of gangster rap music from <a href="http://en.wikipedia.org/wiki/N.W.A" target="_blank">N.W.A.</a>
+      The phonetic prounounciation of the acronym for <strong>Eve Corporation Extension</strong> (E.C.E.).  Also
+      the father of gangster rap music from the <a href="http://en.wikipedia.org/wiki/N.W.A" target="_blank">N.W.A.</a>
     </p>
     <small>E.C.E. Devs and <cite><a href="http://en.wikipedia.org/wiki/Eazy-E" target="_blank">Wikipedia</a></cite></small>
   </blockquote>
-  <p>
-    <a ng-click="requestTrust()" ng-disabled="!permitted()" class="btn btn-primary btn-large">Trust This Website</a>
-  </p>
+  <p>Getting up and running is simple:</p>
+  <ol class="inline">
+    <li>
+      1.
+      <button ng-click="requestTrust()"
+      ng-disabled="notInGame && !igb.trusted"
+      class="btn btn-large btn-primary" ng-class="{'btn-primary': !igb.trusted, 'btn-success': igb.trusted}">
+        <i class="icon-ok" ng-show="igb.trusted"></i>
+        Trust EAZY-E
+      </button>
+    </li>
+    <li>
+      <strong>2.</strong>
+    <a  href="#/signup"
+        class="btn btn-primary btn-large">
+        <i class="icon-remove"></i>
+        Register Your Capsuleer 
+      </a>
+    </li>
+    <li>
+      3.
+    <a  href="#/login"
+        class="btn btn-primary btn-large">
+        <i class="icon-remove"></i>
+        Login to EAZY-E
+      </a>
+      </li>
+  </ol>
 </div>
 
 <div class="row">
   <div class="span4">
-    <h2>Wormhole Tools</h2>
-    <p>
-      Using data collected anonymously from players who leave this website running in their in-game browser, you can get
-      an estimate on how much mass is needed to collapse a Wormhole.
+    <h2>WH Mass Tracking</h2>
+     <p>
+      Close wandering wormholes and dangerous statics
+      on your corp's system with precision.
     </p>
-    <p><a class="btn" href="#">View details &raquo;</a></p>
+
+     <blockquote><em>
+      Boyz in the hood are always hard<br>
+      come talkin' that trash we'll pull your card<br>
+      knowin nothing in life but to be legit<br>
+      track dat mass boy and collapse that shit</em>
+      <small>EAZY-E</small>
+    </blockquote>
   </div>
   <div class="span4">
-    <h2>Corp Directors</h2>
-    <p>We can provide a total picture of your corp's firepower such that you can better manage assets and defences for your fleet.</p>
-    <p><a class="btn" href="#">View details &raquo;</a></p>
+    <h2>Feel Presidential</h2>
+    <p>Directors and CEOs can enjoy robust analytics about their member's positions and assets. You know, for spies and shit.</p>
+    <blockquote><em>
+    See a big asset and I said "word?"<br>
+    took a look at the ALT and the bitch was to the curb
+    </em>
+    <small>EAZY-E</small></blockquote>
  </div>
   <div class="span4">
-    <h2>Open Source</h2>
-    <p>See the source code that is used to run this website so you can be sure there is no funny business. We take the security of your information very seriously.</p>
-    <p><a class="btn" href="#">View details &raquo;</a></p>
+    <h2>Protect Ya Neck</h2>
+    <p>Members can only access shared-corp data with valid API keys. Players additionally are required to authenticate and their HTTP headers checked against the API to protect against spoofing.</p>
+    <blockquote>
+      <em>
+        Yeah, you gotta be cunnin'<br>
+        told Ice Cube to pick a strong password
+      </em>
+      <small>EAZY-E</small>
+    </blockquote>
   </div>
 </div>
+

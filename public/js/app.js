@@ -22,8 +22,8 @@ angular.module('ECE',
       $routeProvider.otherwise({redirectTo: '/'});
     }
   ]
-).run([
-  'auth', 'eve', '$location', '$rootScope',
+);/*.run([
+   '$location', '$rootScope',
   function(auth, eve, $location, $rootScope) {
     function redirect(path, next, allowedPartials) {
       var needsRedirect = allowedPartials.every(function(partial) {
@@ -35,7 +35,7 @@ angular.module('ECE',
       }
     }
 
-    /*$rootScope.$on('$routeChangeStart', function(event, next, current) {
+    $rootScope.$on('$routeChangeStart', function(event, next, current) {
       if(eve.isInGameBrowser()) {
         if(auth.permitted()) {
           if(auth.isAuthed() === false) {
@@ -48,5 +48,5 @@ angular.module('ECE',
       } else {
         redirect('/', next, ['main']);
       } 
-  });*/
-}]);
+  });
+}]);*/

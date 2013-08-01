@@ -1,24 +1,29 @@
 var express = require("express");
-var igb = require("./app/models/igbParams.js");
+var igb = require("./app/models/igb.js");
 var app = express();
+
+// logger
 app.use(express.logger());
 
+// ejs template stuffs
 app.engine('.html', require('ejs').__express);
 app.set('views', __dirname + '/app/views');
 app.set('view engine', 'html');
 
+// Process IGB (in game browser) headers
+app.use(igb.middleware);
+
+// default view
 app.get('/', function(req, res) {
-  var igbparams = igb.extractParameters(req);
-  console.log(req.headers);
   res.render('index', {
-    igb: igbparams
+    igb: JSON.stringify(req.igb)
   });
 });
-app.use(express.static(__dirname + '/public'));
-// app.get('/api/igb', fuction(req, res) {
-//   res.send(eve.getIGBHeaders(req));
-// });
 
+// static content
+app.use(express.static(__dirname + '/public'));
+
+// run application.
 var port = process.env.PORT || 5000;
 app.listen(port, function() {
   console.log("Listening on " + port);
