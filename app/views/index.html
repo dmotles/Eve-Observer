@@ -14,10 +14,10 @@
     <div class="navbar-inner">
       <div class="container">
         <% if(igb.trusted === 'Yes') {%>
-        <div class="pull-right nav-text">
-          <span><%= igb.charName %></span>
-          <img src="http://image.eveonline.com/character/<%= igb.charId %>_64.jpg" height="50" width="50">
-        </div>
+        <span class="pull-right navbar-text">
+          <%= igb.charName %>
+          <img src="http://image.eveonline.com/character/<%= igb.charId %>_30.jpg" height="20" width="20">
+        </span>
         <% } %>
         <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
           <span class="icon-bar"></span>
